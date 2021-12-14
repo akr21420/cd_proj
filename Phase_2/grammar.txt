@@ -1,0 +1,7 @@
+STMT -> type var op cp begin BODY end
+BODY -> DECL BODY | LOOP BODY | INITIALIZATIONLIST BODY | ^
+DECL -> type sp VARLIST sc
+VARLIST -> var VARLIST | var
+LOOP -> for op EXPR sc var relop var sc INITIALIZATIONLIST cp begin BODY end
+INITIALIZATIONLIST -> var eq EXPR sc | var eq EXPR sc  INITIALIZATIONLIST
+EXPR -> EXPR oprt EXPR | op EXPR cp | num | var
